@@ -28,12 +28,12 @@ export class LoginPage {
       this.password
     );
     console.log(user);
-    this.gotoSignup();
+    this.gotoHome();
   }
 
 
   gotoHome(){
-    this.router.navigateByUrl("/home");
+    this.router.navigateByUrl("/tabs");
 
   }
   gotoSignup() {
