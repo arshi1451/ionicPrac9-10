@@ -34,12 +34,15 @@ export class DataService {
 
   addStudent(student:Student )
   {
+    console.log(student.name);
+
     const studDetails = collection(this.firestore,'students');
     return addDoc(studDetails,student);
   }
 
   deleteStudent(student: Student)
   {
+    console.log(student.name);
     const studDetailsbyid = doc(this.firestore,`students/${student.id}`);
     return deleteDoc(studDetailsbyid);
   }
