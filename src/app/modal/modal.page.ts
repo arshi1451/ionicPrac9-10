@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ModalController, ToastController } from '@ionic/angular';
+import { ModalController, NavParams, ToastController } from '@ionic/angular';
 import { DataService, Student } from '../services/data.service';
 
 @Component({
@@ -14,10 +14,13 @@ export class ModalPage implements OnInit {
   constructor(
     private dataService: DataService,
     private modalCtrl: ModalController,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    private navParams: NavParams
   ) {}
 
   ngOnInit() {
+    this.id = this.navParams.get('id');
+    console.log('Modal ID:', this.id);
     this.dataService.getStudentsById(this.id).subscribe((res: Student[]) => {
       if (Array.isArray(res) && res.length > 1) {
         this.students = res[1]; // Assign the first student object
@@ -37,7 +40,7 @@ export class ModalPage implements OnInit {
   }
 
   async deleteStudent() {
-    await this.dataService.deleteStudent();
+    await this.dataService.deleteStudentByUcid(this.id);
     this.modalCtrl.dismiss();
   }
 }

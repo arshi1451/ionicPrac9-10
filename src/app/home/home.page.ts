@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { DataService, Student } from '../services/data.service';
 import { AlertController, ModalController } from '@ionic/angular';
 import { ModalPage } from '../modal/modal.page';
+import { DataService, Student } from '../services/data.service';
 
 @Component({
   selector: 'app-home',
@@ -27,7 +27,7 @@ export class HomePage {
   {
     const modal = await this.modalCtrl.create({
       component: ModalPage,
-      componentProps:{id: studentData.id},
+      componentProps:{id: studentData.Ucid},
       breakpoints: [ 0 , 0.5 , 0.8],
       initialBreakpoint: 0.5
     });
