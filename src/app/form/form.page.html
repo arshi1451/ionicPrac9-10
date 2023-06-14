@@ -1,0 +1,126 @@
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Course Exit Form
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list class="">
+    <ion-item>
+      <ion-label> How satisfied are you with the course content?</ion-label>
+    </ion-item>
+    <ion-radio-group [(ngModel)]="surveyData.q1">
+      <ion-item>
+        <ion-label>very good</ion-label>
+        <ion-radio value="very good"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>good</ion-label>
+        <ion-radio value="good"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>low</ion-label>
+        <ion-radio value="low"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>poor</ion-label>
+        <ion-radio value="poor"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+<br>
+    <ion-item>
+      <ion-label> Were the learning objectives clearly defined?</ion-label>
+    </ion-item>
+    <ion-radio-group [(ngModel)]="surveyData.q2">
+      <ion-item>
+        <ion-label>very good</ion-label>
+        <ion-radio value="very good"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>good</ion-label>
+        <ion-radio value="good"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>low</ion-label>
+        <ion-radio value="low"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>poor</ion-label>
+        <ion-radio value="poor"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+
+
+    <ion-item>
+      <ion-label> Did the course meet your expectations? </ion-label>
+    </ion-item>
+    <ion-radio-group [(ngModel)]="surveyData.q3">
+      <ion-item>
+        <ion-label>very good</ion-label>
+        <ion-radio value="very good"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>good</ion-label>
+        <ion-radio value="good"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>low</ion-label>
+        <ion-radio value="low"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>poor</ion-label>
+        <ion-radio value="poor"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+
+    <ion-item>
+      <ion-label> How likely are you to recommend this course ? </ion-label>
+    </ion-item>
+    <ion-radio-group [(ngModel)]="surveyData.q4">
+      <ion-item>
+        <ion-label>very good</ion-label>
+        <ion-radio value="very good"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>good</ion-label>
+        <ion-radio value="good"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>low</ion-label>
+        <ion-radio value="low"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>poor</ion-label>
+        <ion-radio value="poor"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+
+    <ion-item>
+      <ion-label> How effective was the teaching methodology?</ion-label>
+    </ion-item>
+    <ion-radio-group [(ngModel)]="surveyData.q5">
+      <ion-item>
+        <ion-label>very good</ion-label>
+        <ion-radio value="very good"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>good</ion-label>
+        <ion-radio value="good"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>low</ion-label>
+        <ion-radio value="low"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>poor</ion-label>
+        <ion-radio value="poor"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+
+
+  </ion-list>
+
+  <ion-button expand="full" (click)="submitForm()">Submit</ion-button>
+</ion-content>
