@@ -30,7 +30,11 @@ const routes: Routes = [
   {
     path: 'form',
     loadChildren: () => import('./form/form.module').then( m => m.FormPageModule)
+  },  {
+    path: 'display-feedback',
+    loadChildren: () => import('./display-feedback/display-feedback.module').then( m => m.DisplayFeedbackPageModule)
   },
+
 
 
 

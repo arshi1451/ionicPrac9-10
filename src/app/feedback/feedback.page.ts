@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FeedbackServiceService } from '../services/feedback-service.service';
 interface ListItem{
   name:String,
   designation:String,
@@ -16,14 +17,15 @@ interface ListItem{
 })
 export class FeedbackPage implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private feedbackService:FeedbackServiceService) { }
 
   ngOnInit() {
   }
 
 
-  goToFeedbackPage(){
+  goToFeedbackPage(index:number){
     console.log("navigate : FEEDBACK")
+    FeedbackServiceService.teacherName = this.items[index].name;
     this.router.navigateByUrl("form");
   }
 
