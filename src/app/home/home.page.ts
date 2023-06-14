@@ -43,17 +43,27 @@ export class HomePage {
         {
           name : 'Name',
           placeholder: 'Enter your Name',
-          type: 'text'
+          type: 'text',
+          attributes:{
+            required:true,
+          }
+          
         },
         {
           name : 'UCID',
           placeholder: 'Enter your UCID',
-          type: 'textarea'
+          type: 'textarea',
+          attributes:{
+            required:true,
+          }
         },
         {
           name: "Feedback",
           placeholder: "Enter the feedback",
           type: 'textarea',
+          attributes:{
+            required:true,
+          }
 
         },
 
@@ -66,8 +76,19 @@ export class HomePage {
         },
         {
           text: 'Add',
-          handler:(res) => {
-            this.dataService.addStudent({name : res.Name, Ucid :res.UCID ,feedback: res.Feedback })
+          handler:async(res) => {
+            if (res.Name && res.UCID && res.Feedback) {
+              await this.dataService.addStudent({ name: res.Name, Ucid: res.UCID, feedback: res.Feedback });
+              alert.dismiss();
+            } else {
+              // Show an error message to the user indicating that all fields are required
+              const errorAlert = await this.alertCtrl.create({
+                header: 'Error',
+                message: 'Please fill in all fields.',
+                buttons: ['OK']
+              });
+              await errorAlert.present();
+            }
           }
         }
 

@@ -9,7 +9,7 @@ import { DataService, Student } from '../services/data.service';
 })
 export class ModalPage implements OnInit {
   @Input() id!: string;
-  students: Student = { name: '', Ucid: '', feedback:'' };
+  students= { name: '', feedback:'' };
 
   constructor(
     private dataService: DataService,
@@ -31,7 +31,8 @@ export class ModalPage implements OnInit {
   }
 
   async updateStudent() {
-    await this.dataService.updateStudent();
+
+    await this.dataService.updateStudentByUcid(this.id,this.students);
     const toast = await this.toastCtrl.create({
       message: 'Student Updated',
       duration: 1000,
