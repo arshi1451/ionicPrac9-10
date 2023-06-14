@@ -28,7 +28,7 @@ export class ModalPage implements OnInit {
   }
 
   async updateStudent() {
-    await this.dataService.updateStudent(this.students);
+    await this.dataService.updateStudent();
     const toast = await this.toastCtrl.create({
       message: 'Student Updated',
       duration: 1000,
@@ -37,7 +37,7 @@ export class ModalPage implements OnInit {
   }
 
   async deleteStudent() {
-    await this.dataService.deleteStudent(this.students);
+    await this.dataService.deleteStudent();
     this.modalCtrl.dismiss();
   }
 }

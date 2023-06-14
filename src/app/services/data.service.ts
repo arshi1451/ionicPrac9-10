@@ -19,7 +19,7 @@ export class DataService {
 
   constructor(private firestore: Firestore) { }
 
-
+  static student:Student;
   getStudents(): Observable<Student[]>
   {
     const studDetails = collection(this.firestore, 'students');
@@ -40,17 +40,23 @@ export class DataService {
     return addDoc(studDetails,student);
   }
 
-  deleteStudent(student: Student)
+  deleteStudent()
   {
-    console.log(student.name);
-    const studDetailsbyid = doc(this.firestore,`students/${student.id}`);
-    return deleteDoc(studDetailsbyid);
+    console.log(DataService.student.name);
+    const documentRef = doc(this.firestore,"students","zz7Uea0JNbVKbv6ii3Jr");
+    deleteDoc(documentRef)
+    .then(() => {
+      console.log('Document deleted successfully.');
+    })
+    .catch((error) => {
+      console.error('Error deleting document:', error);
+    });
   }
 
-  updateStudent(student: Student)
+  updateStudent()
   {
-    const studDetailsbyid = doc(this.firestore,`students/${student.id}`);
-    return updateDoc(studDetailsbyid,{name:student.name, Ucid: student.Ucid});
+    const studDetailsbyid = doc(this.firestore,`students/${DataService.student.id}`);
+    return updateDoc(studDetailsbyid,{name:DataService.student.name, Ucid: DataService.student.Ucid});
   }
 
 }

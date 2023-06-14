@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataService } from '../services/data.service';
+import { DataService, Student } from '../services/data.service';
 import { AlertController, ModalController } from '@ionic/angular';
 import { ModalPage } from '../modal/modal.page';
 
@@ -23,14 +23,16 @@ export class HomePage {
   
 
 
-  async openStudentList(student:any)
+  async openStudentList(studentData:Student)
   {
     const modal = await this.modalCtrl.create({
       component: ModalPage,
-      componentProps:{id: student.id},
+      componentProps:{id: studentData.id},
       breakpoints: [ 0 , 0.5 , 0.8],
       initialBreakpoint: 0.5
     });
+    DataService.student = studentData
+    console.log(studentData.name)
     modal.present();
   }
  async addNote()
