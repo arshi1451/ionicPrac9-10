@@ -1,13 +1,38 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>displayFeedback</ion-title>
+    <ion-title>Feedback Display</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">displayFeedback</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-list>
+    <ion-item *ngFor="let feedback of feedbackArray" >
+    <ion-label>
+
+    Faculty name :  {{feedback.teacherName}} <br>
+    <ion-row>
+      Q1: {{feedback.q1}}
+
+    </ion-row>
+    <ion-row>
+      Q2: {{feedback.q2}}
+    </ion-row>
+    <ion-row>
+      Q3: {{feedback.q3}}
+    </ion-row>
+    <ion-row>
+      Q4: {{feedback.q4}}
+    </ion-row>
+    <ion-row>
+      Q5: {{feedback.q5}}
+    </ion-row>
+    
+
+
+    </ion-label>
+    
+      
+    
+    </ion-item>
+  </ion-list>
 </ion-content>

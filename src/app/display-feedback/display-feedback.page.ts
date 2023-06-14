@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Feedback, FeedbackServiceService } from '../services/feedback-service.service';
 
 @Component({
   selector: 'app-display-feedback',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DisplayFeedbackPage implements OnInit {
 
-  constructor() { }
-
+  constructor(private feedbackService:FeedbackServiceService) { }
+  feedbackArray: Feedback[] = [];
   ngOnInit() {
+    this.feedbackService.getFeedback().subscribe(res=>{
+      console.log("final", res)
+      this.feedbackArray = res;
+    });
   }
 
 }

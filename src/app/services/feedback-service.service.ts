@@ -30,7 +30,8 @@ export class FeedbackServiceService {
 
   getFeedback():Observable<Feedback[]>{
     const feedbackDetails = collection(this.firestore, 'feedbacks');
-    return collectionData(feedbackDetails, {idField:'Serial_Id'}) as Observable<Feedback[]>;
-    
+    let data = collectionData(feedbackDetails, {idField:'Serial_Id'}) as Observable<Feedback[]>;
+    console.log(data);
+    return data;    
   }
 }
