@@ -6,33 +6,30 @@
 
 <ion-content [fullscreen]="true">
   <ion-list>
-    <ion-item *ngFor="let feedback of feedbackArray" >
-    <ion-label>
-
-    Faculty name :  {{feedback.teacherName}} <br>
-    <ion-row>
-      Q1: {{feedback.q1}}
-
-    </ion-row>
-    <ion-row>
-      Q2: {{feedback.q2}}
-    </ion-row>
-    <ion-row>
-      Q3: {{feedback.q3}}
-    </ion-row>
-    <ion-row>
-      Q4: {{feedback.q4}}
-    </ion-row>
-    <ion-row>
-      Q5: {{feedback.q5}}
-    </ion-row>
-    
-
-
-    </ion-label>
-    
-      
-    
+    <ion-item *ngFor="let feedback of feedbackArray">
+      <ion-label style="display: block; padding: 10px;">
+        <div style="font-weight: bold;">Faculty name: {{ feedback.teacherName }}</div>
+        <div style="margin-top: 10px;">
+          <div><span style="font-weight: bold;">Q1:</span> How satisfied are you with the course content?</div>
+          <div>{{ feedback.q1 }}</div>
+        </div>
+        <div style="margin-top: 10px;">
+          <div><span style="font-weight: bold;">Q2:</span> Were the learning objectives clearly defined?</div>
+          <div>{{ feedback.q2 }}</div>
+        </div>
+        <div style="margin-top: 10px;">
+          <div><span style="font-weight: bold;">Q3:</span> Did the course meet your expectations?</div>
+          <div>{{ feedback.q3 }}</div>
+        </div>
+        <div style="margin-top: 10px;">
+          <div><span style="font-weight: bold;">Q4:</span> How likely are you to recommend this course?</div>
+          <div>{{ feedback.q4 }}</div>
+        </div>
+        <div style="margin-top: 10px;">
+          <div><span style="font-weight: bold;">Q5:</span> How effective was the teaching methodology?</div>
+          <div>{{ feedback.q5 }}</div>
+        </div>
+      </ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

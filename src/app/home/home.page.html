@@ -1,30 +1,25 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Students List
-    </ion-title>
+    <ion-title style="text-align: center;">Students List</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-list>
     <ion-item *ngFor="let student of students" (click)="openStudentList(student)">
-    <ion-label>
-
-    Name:  {{student.name}} <br>
-    UCID: {{student.Ucid}}
-     <ion-label>
-     Feedback:  {{student.feedback}}
-     </ion-label>
-    </ion-label>
-    
-      
-    
+      <ion-label style="display: block; padding: 10px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+        <div style="font-weight: bold; margin-bottom: 5px;">Name:<span> {{ student.name }} </span></div>
+        <div></div>
+        <div style="font-weight: bold; margin-bottom: 5px;">UCID: {{ student.UCID}}</div>
+        <!-- <div>{{ student.Ucid }}</div> -->
+        <div style="font-weight: bold; margin-bottom: 5px;">Feedback: {{ student.feedback }}</div>
+       <!-- <div>{{ student.feedback }}</div> -->
+      </ion-label>
     </ion-item>
   </ion-list>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="addNote()">
-    <ion-icon name="add"></ion-icon>
-  </ion-fab-button>
+    <ion-fab-button (click)="addNote()" style="foreground-color: #3880ff;">
+      <ion-icon name="add" style="color: #ffffff;"></ion-icon>
+    </ion-fab-button>
   </ion-fab>
 </ion-content>
